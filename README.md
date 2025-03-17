@@ -1,59 +1,61 @@
-# IntegradorFinalAngular
+# Integrador Final Angular - Consumo de API JSONPlaceholder
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
+Este proyecto es una aplicación Angular simple que consume datos de la API JSONPlaceholder, utilizando Axios para realizar peticiones HTTP y Bootstrap (Bootswatch) para el diseño de la interfaz de usuario.
 
-## Development server
+## Descripción del Proyecto
 
-To start a local development server, run:
+Esta aplicación obtiene una lista de tareas desde la API JSONPlaceholder y las muestra en una tabla interactiva. Las tareas completadas se destacan con un fondo verde, mientras que las tareas pendientes se muestran con indicadores visuales claros.
 
-```bash
-ng serve
-```
+![Captura de pantalla de la aplicación](screenshot.png)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Características Principales
 
-## Code scaffolding
+- **Consumo de API REST**: Utiliza Axios para obtener datos de JSONPlaceholder
+- **Interfaz Responsiva**: Diseño adaptable para diferentes tamaños de pantalla
+- **Manejo de Estados**: Incluye estados de carga y errores
+- **Indicadores Visuales**: Las tareas completadas y pendientes se distinguen con colores
+- **Componente Único**: Implementación en un solo componente para simplicidad
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Tecnologías Utilizadas
 
-```bash
-ng generate component component-name
-```
+- **Angular**: Framework principal (versión 19.2.0)
+- **Axios**: Biblioteca para realizar peticiones HTTP
+- **Bootswatch**: Tema de Bootstrap para estilos
+- **TypeScript**: Lenguaje de programación con tipado estático
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Estructura del Proyecto
 
-```bash
-ng generate --help
-```
+Los archivos principales del proyecto son:
 
-## Building
+- `src/app/app.component.ts`: Contiene la lógica para obtener y manejar los datos
+- `src/app/app.component.html`: Plantilla HTML para mostrar los datos
+- `src/index.html`: Documento HTML base con la referencia a Bootswatch
 
-To build the project run:
+## Cómo Ejecutar el Proyecto
 
-```bash
-ng build
-```
+1. Clona este repositorio o descarga el código fuente
+2. Asegúrate de tener instalado Node.js y Angular CLI
+3. Instala las dependencias con `npm install`
+4. Ejecuta el servidor de desarrollo con `ng serve`
+5. Abre tu navegador en `http://localhost:4200/`
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## API Utilizada
 
-## Running unit tests
+Esta aplicación consume datos de la API JSONPlaceholder:
+- Endpoint para tareas: `https://jsonplaceholder.typicode.com/todos`
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Desarrollo
 
-```bash
-ng test
-```
+Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) versión 19.2.0.
 
-## Running end-to-end tests
+### Servidor de Desarrollo
 
-For end-to-end (e2e) testing, run:
+Ejecuta `ng serve` para iniciar un servidor de desarrollo. Navega a `http://localhost:4200/`. La aplicación se recargará automáticamente si cambias alguno de los archivos de origen.
 
-```bash
-ng e2e
-```
+### Compilación
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Ejecuta `ng build` para compilar el proyecto. Los archivos de compilación se almacenarán en el directorio `dist/`.
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Proyecto desarrollado como parte del curso de desarrollo web 2025.

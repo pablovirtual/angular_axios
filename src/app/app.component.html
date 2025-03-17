@@ -1,12 +1,16 @@
+<!-- Contenedor principal con margen superior -->
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-10">
+      <!-- Tarjeta principal que contiene toda la información -->
       <div class="card">
+        <!-- Encabezado de la tarjeta con el título de la aplicación -->
         <div class="card-header bg-primary text-white">
           <h2 class="mb-0 text-center">{{ title }}</h2>
         </div>
         <div class="card-body">
-          <!-- Mostrar mensaje de carga -->
+          <!-- SECCIÓN: INDICADOR DE CARGA 
+               Se muestra solo cuando la propiedad 'loading' es true -->
           <div *ngIf="loading" class="text-center">
             <div class="spinner-border text-primary" role="status">
               <span class="visually-hidden">Cargando...</span>
@@ -14,14 +18,17 @@
             <p class="mt-2">Cargando datos...</p>
           </div>
 
-          <!-- Mostrar mensaje de error -->
+          <!-- SECCIÓN: MENSAJE DE ERROR 
+               Se muestra solo cuando hay un error en la carga de datos -->
           <div *ngIf="error" class="alert alert-danger" role="alert">
             {{ error }}
           </div>
 
-          <!-- Mostrar los datos -->
+          <!-- SECCIÓN: TABLA DE DATOS 
+               Se muestra solo cuando no hay errores y la carga ha finalizado -->
           <div *ngIf="!loading && !error">
             <div class="table-responsive">
+              <!-- Tabla con estilo hover para mejor interactividad -->
               <table class="table table-hover">
                 <thead class="table-light">
                   <tr>
@@ -32,11 +39,14 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <!-- Iteración sobre el array de tareas 
+                       La clase 'table-success' se aplica a las filas de tareas completadas -->
                   <tr *ngFor="let todo of todos" [class.table-success]="todo.completed">
                     <td>{{ todo.id }}</td>
                     <td>{{ todo.userId }}</td>
                     <td>{{ todo.title }}</td>
                     <td>
+                      <!-- Indicador visual del estado de la tarea con badges de colores -->
                       <span *ngIf="todo.completed" class="badge bg-success">Completada</span>
                       <span *ngIf="!todo.completed" class="badge bg-warning">Pendiente</span>
                     </td>
@@ -44,11 +54,13 @@
                 </tbody>
               </table>
             </div>
+            <!-- Contador de tareas totales -->
             <div class="text-center mt-3">
               <p class="text-muted">Total de tareas: {{ todos.length }}</p>
             </div>
           </div>
         </div>
+        <!-- Pie de la tarjeta con información sobre la API utilizada -->
         <div class="card-footer text-muted text-center">
           Proyecto Integrador Final Angular | API: jsonplaceholder.typicode.com/todos
         </div>
